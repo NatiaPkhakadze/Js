@@ -1,0 +1,247 @@
+.nav-bar {
+    background-color: #596e79;
+    position: fixed;
+    width: 100%;
+    min-height: 50px;
+}
+
+.BG-color {
+    background-color: #f0ece2;
+}
+
+.nav-li {
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.nav-ul {
+    display: flex;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+#hamburger-wrapper {
+    display: none;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    float: right;
+    position: relative;
+    cursor: pointer;
+}
+
+.burger {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.burger,
+.burger:before,
+.burger:after {
+    padding: 0;
+    background-color: black;
+    width: 80%;
+    height: 8px;
+    transition: margin .1s .2s, transform .2s;
+}
+
+.burger:before,
+.burger:after {
+    margin: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.burger:before {
+    margin-top: -12px;
+}
+
+.burger:after {
+    margin-top: 12px;
+}
+
+/* STYLES FOR OUR BURGER WHEN THE MENU OPENS */
+.open .burger {
+    transform: rotate(45deg);
+}
+
+.open .burger,
+.open .burger:before,
+.open .burger:after {
+    transition: margin .2s, transform .1s .2s;
+}
+
+.open .burger:before,
+.open .burger:after {
+    margin-top: 0;
+}
+
+.open .burger:after {
+    transform: rotate(-90deg)
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    padding: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+#burger-menu {
+    cursor: pointer;
+    height: 27px;
+    width: 27px;
+    margin: 10px;
+    overflow: visible;
+    position: relative;
+    z-index:2;
+    float: right;
+    display: none;
+}
+#burger-menu span,
+#burger-menu span:before,
+#burger-menu span:after {
+    background: #fff;
+    display: block;
+    height: 4px;
+    opacity: 1;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+}
+#burger-menu span:before,
+#burger-menu span:after {
+    content: "";
+}
+#burger-menu span {
+    right: 0px;
+    top: 13px;
+    width: 27px;
+}
+#burger-menu span:before {
+    left: 0px;
+    top: -10px;
+    width: 16px;
+}
+#burger-menu span:after {
+    left: 0px;
+    top: 10px;
+    width: 20px;
+}
+
+#burger-menu.close span {
+    transform: rotate(-45deg);
+    top: 13px;
+    width: 27px;
+}
+#burger-menu.close span:before {
+    top: 0px;
+    transform: rotate(90deg);
+    width: 27px;
+}
+#burger-menu.close span:after {
+    top: 0px;
+    left:0;
+    transform: rotate(90deg);
+    opacity:0;
+    width:0;
+}
+
+#menu{
+    z-index:1;
+    min-width:100%;
+    min-height:100%;
+    position: fixed;
+    top:0;
+    height:0;
+    visibility: hidden;
+    opacity: 0;
+    text-align:center;
+    padding-top:20px;
+    transition: all 0.3s ease-in-out;
+
+}
+
+#menu.overlay{
+    visibility: visible;
+    opacity: 1;
+    padding-top:100px;
+    background:rgba(0,0,0,0.5);
+}
+
+#menu li{
+    list-style:none;
+}
+#menu a{
+    color:#fff;
+    display:block;
+    font-size: 32px;
+    margin-bottom:30px;
+    text-decoration:none;
+}
+.header {
+    height: 50px;
+}
+input[type=text]{
+    width:100%;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+}
+
+input[type=text]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+}
+.btn {
+    background-color: transparent;
+    border: 2px solid #3c58e77d;
+    border-radius: 0.6em;
+    color: #473376;
+    cursor: pointer;
+    margin: 20px;
+    font-weight: 700;
+    height: 35px;
+    width: 200px;
+}
+.btn:hover {
+    color: #fff;
+    outline: 0;
+}
+
+.submit {
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+.submit:hover {
+    box-shadow: 0 0 40px 40px #e74c3c inset;
+}
+@media screen and (max-width: 992px) {
+    #burger-menu {
+        display: block;
+    }
+    #navigation {
+        display: none;
+    }
+}
+#delete-list {
+    color: #ff000091;
+    cursor: pointer;
+}
+#delete-list:hover {
+    color: red;
+}
